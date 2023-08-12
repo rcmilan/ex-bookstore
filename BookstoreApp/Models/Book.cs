@@ -16,7 +16,7 @@
 
             SortedAuthors = new(ensureOrdered);
         }
-        private Lazy<List<BookAuthor>> SortedAuthors { get; set; }
+        private readonly Lazy<List<BookAuthor>> SortedAuthors;
         private List<BookAuthor> AuthorsCollection = new();
         public IEnumerable<Person> Authors => SortedAuthors.Value.Select(a => a.Person);
 
